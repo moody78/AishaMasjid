@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[AppDelegate createReminderForPrayerName:atTime:withAmOrPm:jamaaTime:extraNote:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSString stringWithFormat:@&quot;registering date %@&quot;,[inputFormatter stringFromDate:[formatterDate dateByAddingTimeInterval:60 * 60 * 24 * 0] ]]">
+            </PersistentString>
+            <PersistentString
+               value = "[inputFormatter dateFromString:@&quot;2015-5-16 at 10:24pm&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "[formatterDate dateByAddingTimeInterval:60 * 60 * 24 * 0]">
+            </PersistentString>
+            <PersistentString
+               value = "[inputFormatter stringFromDate:[formatterDate dateByAddingTimeInterval:60 * 60 * 24 * 0] ]">
+            </PersistentString>
+            <PersistentString
+               value = "[inputFormatter dateFromString:stringDate]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[TodayViewController formatNextPrayer]:TodayViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[prayerTimes.dhuhrAzan substringToIndex:1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate createNewSettingsWithFajrReminder:DhuhrReminder:AsrReminder:MaghribReminder:IshaReminder:]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSNumber numberWithBool:paramIshaReminder]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController formatNextPrayer]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[prayerTimesGate getPrayerTimeAt:prayerTimes.asrAzan ampm:@&quot;pm&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "prayerTimesGate">
+            </PersistentString>
+            <PersistentString
+               value = "[[prayerTimesGate getPrayerTimeAt:prayerTimes.asrAzan ampm:@&quot;pm&quot;] compare:[NSDate date]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate getCurrentPrayerSettingsRecord]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "((Settings *)settingsRecords[0])">
+            </PersistentString>
+            <PersistentString
+               value = "[settingsRecords[0].fajrReminder boolValue]">
+            </PersistentString>
+            <PersistentString
+               value = "[settingsRecords count]">
+            </PersistentString>
+            <PersistentString
+               value = "self.managedObjectContext">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ActivitiesViewController tableView:heightForRowAtIndexPath:]:ActivitiesViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimes encodeWithCoder:]:Settings.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[TableViewController switchIsChanged:]:TableViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate createNewPrayerTimesWithFajrAzan:FajrJamaa:SunrsiseAzan:DhuhrAzan:DhuhrJamaa:AsrAzan:AsrJamaa:MaghribAzan:MaghribJamaa:IshaAzan:IshaJamaa:ModifiedOn:]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "encodedObject == nil">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate reloadPrayerTimes]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "fajrAzan">
+            </PersistentString>
+            <PersistentString
+               value = "existingPrayerTimes.fajrAzan">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate getTodaysActivityFromHTML:]:PrayerTimesGate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate cancelAllFutureLocalNotifications]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSDate date]">
+            </PersistentString>
+            <PersistentString
+               value = "oneEvent.fireDate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate refreshReminderNotifications]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIApplication sharedApplication] scheduledLocalNotifications]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ActivitiesViewController tableView:cellForRowAtIndexPath:]:ActivitiesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSString stringWithFormat:@&quot;%@ - %@ @ %@&quot;,[activities objectAtIndex:index + 1],[activities objectAtIndex:index + 2],[activities objectAtIndex:index + 3]];">
+            </PersistentString>
+            <PersistentString
+               value = "[activities objectAtIndex:index]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController drawPrayerTimes]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.sunriseTitle">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ActivitiesViewController viewDidLoad]:ActivitiesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tableView.contentSize.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.tableView.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate createReminderForPrayerName:atTime:withAmOrPm:]:AppDelegate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController loadPage]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate observeValueForKeyPath:ofObject:change:context:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[change objectForKey:NSKeyValueChangeOldKey]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate application:didFinishLaunchingWithOptions:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(Settings_Settings_ *)settings">
+            </PersistentString>
+            <PersistentString
+               value = "[settings.fajrReminder boolValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate fetchNewPrayerTimes:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[newPrayerTimes.fajrAzan isEqualToString:existingPrayerTimes.fajrAzan]">
+            </PersistentString>
+            <PersistentString
+               value = "newPrayerTimes.fajrAzan">
+            </PersistentString>
+            <PersistentString
+               value = "existingPrayerTimes.fajrAzan">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate getCurrentPrayerTimesRecord]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "prayerTimesRecords[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate getTodaysActivity:]:PrayerTimesGate.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate reloadSettingsWithFajrReminder:DhuhrReminder:AsrReminder:MaghribReminder:IshaReminder:]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "existingSettings.fajrReminder">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController viewDidLoad]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.layer.sublayers.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrayerTimesGate getIslamicDateFromHTML:]:PrayerTimesGate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[content substringWithRange:range1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

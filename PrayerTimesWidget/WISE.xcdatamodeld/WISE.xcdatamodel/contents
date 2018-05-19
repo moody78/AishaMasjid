@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A361p" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="PrayerTimes" representedClassName="PrayerTimes" syncable="YES">
+        <attribute name="asrAzan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="asrJamaa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dhuhrAzan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dhuhrJamaa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fajrAzan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fajrJamaa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ishaAzan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ishaJamaa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maghribAzan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maghribJamaa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="modifiedOn" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sunriseAzan" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PrayerTimes" positionX="-63" positionY="-18" width="128" height="225"/>
+    </elements>
+</model>
