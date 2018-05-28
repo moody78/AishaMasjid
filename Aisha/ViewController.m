@@ -65,6 +65,8 @@
 {
     PrayerTimes *prayerTimes = [prayerTimesGate getCurrentPrayerTimesRecord];
     
+    self.hijriTitle.text = [prayerTimesGate getIslamicDate:prayerTimes.adjustment longDate:true];
+    
     self.fajrTitle.text = @"Fajr";
     self.fajrAzan.text = prayerTimes.fajrAzan;
     self.fajrJamaa.text = prayerTimes.fajrJamaa;
@@ -310,10 +312,14 @@
     float top5 = top4 + height + verticalSpacing;
     float top6 = top5 + height + verticalSpacing;
     float titleTop = top0 - (height) * titleTopDelta;
+    float hijriTop = titleTop - (height) * titleTopDelta;
     
     if(self.prayersTimeTitle == nil)
     {
         // Initialize all labels
+        self.hijriTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, hijriTop, [[UIScreen mainScreen] bounds].size.width, height)];
+        self.hijriTitle.textAlignment = NSTextAlignmentCenter;
+        
         self.prayersTimeTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, titleTop, [[UIScreen mainScreen] bounds].size.width, height)];
         self.prayersTimeTitle.textAlignment = NSTextAlignmentCenter;
     
@@ -347,6 +353,7 @@
         [self.view addSubview:self.azanTitle];
         [self.view addSubview:self.jamaaTitle];
         
+        [self.view addSubview:self.hijriTitle];
         [self.view addSubview:self.prayersTimeTitle];
         [self.view addSubview:self.fajrTitle];
         [self.view addSubview:self.fajrAzan];
@@ -395,6 +402,9 @@
         self.footer.textColor = self.colorForText;
         self.footer.numberOfLines = 0;
         [self.view addSubview:self.footer];
+        
+        self.hijriTitle.textColor = self.colorForText;
+        self.hijriTitle.font = [UIFont systemFontOfSize:18.0f];
         
         self.prayersTimeTitle.text = @"Today's prayer times";
         self.prayersTimeTitle.textColor = self.colorForText;
@@ -468,13 +478,26 @@
             [UIView animateWithDuration:0.0f animations:^{self.lineViewBottom.frame = CGRectMake(0, self.ishaTitle.frame.origin.y + 50, self.prayersTimeTitle.frame.size.width, 1);}];
         }
         
+        // Move hijri
+        if(landScape == YES)
+        {
+            float hijriLeft = self.lineViewBottom.frame.origin.x + horizontalSpacing;
+            float hijriWidth = self.view.frame.size.width - hijriLeft - horizontalSpacing;
+            
+            [UIView animateWithDuration:0.5f animations:^{self.hijriTitle.frame = CGRectMake(hijriLeft, self.lineViewBottom.frame.origin.y, hijriWidth, height * 2);}];
+        }
+        else
+        {
+            [UIView animateWithDuration:0.5f animations:^{self.hijriTitle.frame = CGRectMake(0,hijriTop, [[UIScreen mainScreen] bounds].size.width, height);}];
+        }
+        
         // Move footer
         if(landScape == YES)
         {
             float footerLeft = self.lineViewBottom.frame.origin.x + horizontalSpacing;
             float footerWidth = self.view.frame.size.width - footerLeft - horizontalSpacing;
             
-            [UIView animateWithDuration:0.5f animations:^{self.footer.frame = CGRectMake(footerLeft, self.lineViewBottom.frame.origin.y, footerWidth, height * 2);}];
+            [UIView animateWithDuration:0.5f animations:^{self.footer.frame = CGRectMake(footerLeft, self.hijriTitle.frame.origin.y, footerWidth, height * 2);}];
         }
         else
         {

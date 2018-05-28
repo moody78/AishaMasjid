@@ -13,7 +13,7 @@
 #define WISE_PrayerTimesGate_h
 #endif
 
-@interface PrayerTimesGate : NSObject 
+@interface PrayerTimesGate : NSObject
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -31,19 +31,20 @@
 
 - (NSString*) getJamaaTimeFromHTML:(NSString*)content;
 
-- (BOOL) createNewPrayerTimesWithFajrAzan:(NSString *)paramFajrAzan
-                                FajrJamaa:(NSString *)paramFajrJamaa
-                             SunrsiseAzan:(NSString *)paramSunriseAzan
-                                DhuhrAzan:(NSString *)paramDhuhrAzan
-                               DhuhrJamaa:(NSString *)paramDhuhrJamaa
-                                  AsrAzan:(NSString *)paramAsrAzan
-                                 AsrJamaa:(NSString *)paramAsrJamaa
-                              MaghribAzan:(NSString *)paramMaghribAzan
-                             MaghribJamaa:(NSString *)paramMaghribJamaa
-                                 IshaAzan:(NSString *)paramIshaAzan
-                                IshaJamaa:(NSString *)paramIshaJamaa
-                               ModifiedOn:(NSDate *)paramModifiedOn
-                              BgFetchData:(NSString *)paramBgFetchData;
+- (BOOL) createNewPrayerTimesWithAdjustment:(NSString *) paramAdjustment
+                                   FajrAzan:(NSString *)paramFajrAzan
+                                  FajrJamaa:(NSString *)paramFajrJamaa
+                               SunrsiseAzan:(NSString *)paramSunriseAzan
+                                  DhuhrAzan:(NSString *)paramDhuhrAzan
+                                 DhuhrJamaa:(NSString *)paramDhuhrJamaa
+                                    AsrAzan:(NSString *)paramAsrAzan
+                                   AsrJamaa:(NSString *)paramAsrJamaa
+                                MaghribAzan:(NSString *)paramMaghribAzan
+                               MaghribJamaa:(NSString *)paramMaghribJamaa
+                                   IshaAzan:(NSString *)paramIshaAzan
+                                  IshaJamaa:(NSString *)paramIshaJamaa
+                                 ModifiedOn:(NSDate *)paramModifiedOn
+                                BgFetchData:(NSString *)paramBgFetchData;
 
 - (PrayerTimes *) getCurrentPrayerTimesRecord;
 
@@ -70,5 +71,13 @@
 - (NSMutableArray*) getTodaysActivity:(BOOL*)paramFetchedNewActivities;
 
 - (NSDate *) getPrayerTimeAt:(NSString*)azanTime ampm:(NSString*)ampm;
+
+- (NSInteger) gmod:(NSInteger)n m:(NSInteger)m;
+
+-(NSInteger *) kuwaitiCalendar:(NSInteger)adjust;
+
+-(NSString *) getIslamicDate:(NSString *)adjust longDate:(bool)longDate;
+
+
 
 @end

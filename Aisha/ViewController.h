@@ -15,6 +15,8 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *hijriTitle;
+
 @property (nonatomic, strong) UILabel *azanTitle;
 @property (nonatomic, strong) UILabel *jamaaTitle;
 

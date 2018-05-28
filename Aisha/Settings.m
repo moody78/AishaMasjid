@@ -47,6 +47,7 @@
 
 @implementation PrayerTimes
 
+@synthesize adjustment;
 @synthesize fajrAzan;
 @synthesize dhuhrJamaa;
 @synthesize dhuhrAzan;
@@ -63,6 +64,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
     //Encode properties, other class variables, etc
+    [encoder encodeObject:self.adjustment forKey:@"adjustment"];
     [encoder encodeObject:self.fajrAzan forKey:@"fajrAzan"];
     [encoder encodeObject:self.fajrJamaa forKey:@"fajrJamaa"];
     [encoder encodeObject:self.sunriseAzan forKey:@"sunriseAzan"];
@@ -80,7 +82,8 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
     //if((self = [super init])) {
-        //decode properties, other class vars
+    //decode properties, other class vars
+    self.adjustment = [decoder decodeObjectForKey:@"adjustment"];
     self.fajrAzan = [decoder decodeObjectForKey:@"fajrAzan"];
     self.fajrJamaa = [decoder decodeObjectForKey:@"fajrJamaa"];
     self.sunriseAzan = [decoder decodeObjectForKey:@"sunriseAzan"];

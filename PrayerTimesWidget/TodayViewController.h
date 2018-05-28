@@ -12,6 +12,8 @@
 
 @interface TodayViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *hijriDate;
+
 @property (nonatomic, strong) UILabel *azanTitle;
 @property (nonatomic, strong) UILabel *jamaaTitle;
 

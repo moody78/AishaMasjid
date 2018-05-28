@@ -26,6 +26,9 @@
 {
     PrayerTimes *prayerTimes = [prayerTimesGate getCurrentPrayerTimesRecord];
     
+    self.hijriDate.text = @"99 Jumadal Akhira";
+    self.hijriDate.text = [prayerTimesGate getIslamicDate:prayerTimes.adjustment longDate:false];
+    
     self.fajrTitle.text = @"Fajr";
     self.fajrAzan.text = prayerTimes.fajrAzan;
     self.fajrJamaa.text = prayerTimes.fajrJamaa;
@@ -233,6 +236,12 @@
     float top5 = top4 + height + verticalSpacing;
     float top6 = top5 + height + verticalSpacing;
     
+    float hijriWidth = left2 - (left / 2);
+    float hijriLeft = left / 2;
+    
+    self.hijriDate = [[UILabel alloc]initWithFrame:CGRectMake(hijriLeft, top0, hijriWidth, height)];
+    self.hijriDate.textAlignment = NSTextAlignmentCenter;
+    
     self.azanTitle = [[UILabel alloc]initWithFrame:CGRectMake(left2,top0,width,height)];
     self.jamaaTitle = [[UILabel alloc]initWithFrame:CGRectMake(left3,top0,width,height)];
     
@@ -291,6 +300,7 @@
     self.maghribJamaa.textColor = self.fajrJamaa.textColor;
     self.ishaJamaa.textColor = self.fajrJamaa.textColor;
     
+    self.hijriDate.font = [UIFont systemFontOfSize:10.0f];
     self.azanTitle.font = [UIFont boldSystemFontOfSize:headerFontSize];
     self.jamaaTitle.font = [UIFont boldSystemFontOfSize:headerFontSize];
     self.fajrTitle.font = [UIFont boldSystemFontOfSize:headerFontSize];
@@ -321,6 +331,7 @@
     
     [self loadPage];
     
+    [self.view addSubview:self.hijriDate];
     [self.view addSubview:self.azanTitle];
     [self.view addSubview:self.jamaaTitle];
     

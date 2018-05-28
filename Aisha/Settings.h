@@ -24,6 +24,7 @@
 
 @interface PrayerTimes : NSObject
 
+@property (nonatomic, strong) NSString * adjustment;
 @property (nonatomic, strong) NSString * fajrAzan;
 @property (nonatomic, strong) NSString * dhuhrJamaa;
 @property (nonatomic, strong) NSString * dhuhrAzan;
