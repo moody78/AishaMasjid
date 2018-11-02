@@ -219,6 +219,10 @@
     [self.ishaAzan setTextColor:self.colorForText];
     [self.ishaJamaa setTextColor:self.colorForText];
     
+    NSString* ampm = @"pm";
+    if([prayerTimes.dhuhrAzan hasPrefix:@"11"])
+        ampm = @"am";
+    
     if([[prayerTimesGate getPrayerTimeAt:prayerTimes.fajrAzan ampm:@"am"] compare:[NSDate date]] == NSOrderedDescending)
     {
         [UIView animateWithDuration:0.5f animations:^{self.nextPrayerIndicator.center = CGPointMake(self.fajrTitle.frame.origin.x + 10, self.fajrTitle.frame.origin.y + 10);}];
@@ -235,7 +239,7 @@
         [self.sunriseAzan setTextColor:self.colorForNextPrayer];
         [self.sunriseJamaa setTextColor:self.colorForNextPrayer];
     }
-    else if([[prayerTimesGate getPrayerTimeAt:prayerTimes.dhuhrAzan ampm:@"pm"] compare:[NSDate date]] == NSOrderedDescending)
+    else if([[prayerTimesGate getPrayerTimeAt:prayerTimes.dhuhrAzan ampm:ampm] compare:[NSDate date]] == NSOrderedDescending)
     {
         [UIView animateWithDuration:0.5f animations:^{self.nextPrayerIndicator.center = CGPointMake(self.dhuhrTitle.frame.origin.x + 10, self.dhuhrTitle.frame.origin.y + 10);}];
         
@@ -497,7 +501,7 @@
             float footerLeft = self.lineViewBottom.frame.origin.x + horizontalSpacing;
             float footerWidth = self.view.frame.size.width - footerLeft - horizontalSpacing;
             
-            [UIView animateWithDuration:0.5f animations:^{self.footer.frame = CGRectMake(footerLeft, self.hijriTitle.frame.origin.y, footerWidth, height * 2);}];
+            [UIView animateWithDuration:0.5f animations:^{self.footer.frame = CGRectMake(footerLeft, self.hijriTitle.frame.origin.y +  (height * 3), footerWidth, height * 2);}];
         }
         else
         {

@@ -134,7 +134,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.1.0 (1)";
+    NSString *correctVersion = @"1.1.2 (1)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -149,7 +149,7 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.1.0 (1)>" message:@"- App now shows Hijri Date.\n\n- If you choose to play athan from settings then please make sure to change the app notification settings on the phone from Temporary to Persistent. This will allow the athan audio to play completely to the end." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.1.2 (1)>" message:@"This version has bug fixes. More information on the app store." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
         [welcome show];
     }
