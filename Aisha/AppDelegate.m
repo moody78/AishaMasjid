@@ -61,7 +61,7 @@
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
-    self.activitiesViewController = [[ActivitiesViewController alloc] initWithStyle:UITableViewStylePlain];
+    //self.activitiesViewController = [[ActivitiesViewController alloc] initWithStyle:UITableViewStylePlain];
     self.settingsViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
     self.logViewController = [[LogViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -82,9 +82,9 @@
     
     UINavigationController *prayersNavigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     //self.activitiesViewController = [[ActivitiesViewController alloc] initWithNibName:nil bundle:NULL];
-    UINavigationController *activitiesNavigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
+    //UINavigationController *activitiesNavigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
     UINavigationController *settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.settingsViewController];
-    UINavigationController *logNavigationController = [[UINavigationController alloc] initWithRootViewController:self.logViewController];
+    //UINavigationController *logNavigationController = [[UINavigationController alloc] initWithRootViewController:self.logViewController];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:
@@ -134,7 +134,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.1.2 (1)";
+    NSString *correctVersion = @"1.1.4 (1)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -149,7 +149,7 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.1.2 (1)>" message:@"This version has bug fixes. More information on the app store." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.1.4 (1)>" message:@"Fixed bugs that cause the app to crash" delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
         [welcome show];
     }

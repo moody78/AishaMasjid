@@ -7,12 +7,22 @@
 		<key>Aisha.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
-		<key>PrayerTimesWidget.xcscheme</key>
+		<key>PrayerTimesWidget copy 2.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
+		</dict>
+		<key>PrayerTimesWidget copy copy.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>PrayerTimesWidget copy.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>WISE.xcscheme</key>
 		<dict>
@@ -25,6 +35,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>1E66C15E19E12EE800368DD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1E89C38421936A120037A605</key>
 		<dict>
 			<key>primary</key>
 			<true/>
