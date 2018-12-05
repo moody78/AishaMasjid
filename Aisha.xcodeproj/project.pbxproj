@@ -36,6 +36,7 @@
 		1E9CCEED1AF82388003FAE31 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEEA1AF82388003FAE31 /* settings-25.png */; };
 		1E9CCEEE1AF82388003FAE31 /* home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEEB1AF82388003FAE31 /* home-25.png */; };
 		1EC8AE7F1B07B4BF001B35EE /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8AE7E1B07B4BF001B35EE /* LogViewController.m */; };
+		1EF22B1921B893B600A71378 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E83E3931B013F0200B59027 /* Images-2.xcassets */; };
 		9F81E258208B474E0062F9AD /* Athan30_echo_low.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9F81E257208B474D0062F9AD /* Athan30_echo_low.caf */; };
 /* End PBXBuildFile section */
 
@@ -367,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF22B1921B893B600A71378 /* Images-2.xcassets in Resources */,
 				1E89C38E21936A120037A605 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
