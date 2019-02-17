@@ -613,7 +613,8 @@
 
 -(void) reloadPrayerTimes:(BOOL *)paramFetchedNewPrayerTimes{
     
-    NSString *urlString = @"http://aishaislamiccentre.org.uk";///appindex.php";
+    //NSString *urlString = @"http://aishaislamiccentre.org.uk";///appindex.php";
+    NSString *urlString = @"https://prayertimes-functions.azurewebsites.net/api/PrayerTimesTranslator?code=88qupa6LqnWajbvtbNx8P9ssOo2SnFaInK39aP9gv0OQKIKQCH1h4g==&name=aisha";
     //NSString *wiseUrlString = @"http://www.google.com";
     [self loadUrl:urlString];
     NSURL *websiteUrl = [NSURL URLWithString:urlString];
@@ -624,12 +625,12 @@
     
     NSString *wiseUrlString = @"https://www.wise-web.org";///appindex.php";
     //NSString *wiseUrlString = @"http://www.google.com";
-    [self loadUrl:wiseUrlString];
-    NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
-    NSError *wiseError;
-    NSString *wisePage = [NSString stringWithContentsOfURL:wiseURL
-                                                  encoding:NSASCIIStringEncoding
-                                                     error:&wiseError];
+    //[self loadUrl:wiseUrlString];
+    //NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
+    //NSError *wiseError;
+    //NSString *wisePage = [NSString stringWithContentsOfURL:wiseURL
+    //                                              encoding:NSASCIIStringEncoding
+    //                                                 error:&wiseError];
     
     NSString *fajrAzan;
     NSString *fajrJamaa;
@@ -657,11 +658,47 @@
     if(paramFetchedNewPrayerTimes != nil)
         bgFetchData = websitePage;
     
-    timeLocation.location = 0;
-    adjustment = [self getHijriAdjustmentFromHTML:wisePage];
+    NSLog(@"content = %@",websitePage);
     
-    timeLocation.location = 0;
+    // Remove first and last characters which are double quotations
+    websitePage = [websitePage substringWithRange:NSMakeRange(1, [websitePage length]-2)];
     
+    // Remove \r\n
+    websitePage = [websitePage stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@""];
+    
+    // Replace \" with "
+    websitePage = [websitePage stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
+    
+    NSLog(@"content without newline = %@",websitePage);
+    
+    NSData *data = [websitePage dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    
+    //timeLocation.location = 0;
+    adjustment = [parsedObject objectForKey:@"adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
+    
+    //timeLocation.location = 0;
+    
+    fajrAzan = [parsedObject objectForKey:@"FajrAzan"];
+    fajrJamaa = [parsedObject objectForKey:@"FajrJamaah"];
+    
+    //sunrise = [parsedObject objectForKey:@"Sunrise"];
+    
+    dhuhrAzan = [parsedObject objectForKey:@"DhuhrAzan"];
+    dhuhrJamaa = [parsedObject objectForKey:@"DhuhrJamaah"];
+    
+    asrAzan = [parsedObject objectForKey:@"AsrAzan"];
+    asrJamaa = [parsedObject objectForKey:@"AsrJamaah"];
+    
+    maghribAzan = [parsedObject objectForKey:@"MaghribAzan"];
+    maghribJamaa = [parsedObject objectForKey:@"MaghribJamaah"];
+    
+    ishaAzan = [parsedObject objectForKey:@"IshaAzan"];
+    ishaJamaa = [parsedObject objectForKey:@"IshaJamaah"];
+    
+    /*
     fajrAzan = [self getAzanTimeFromHTML:websitePage];
     //sunrise = [self getAzanTimeFromHTML:websitePage];
     dhuhrAzan = [self getAzanTimeFromHTML:websitePage];
@@ -669,14 +706,16 @@
     maghribAzan = [self getAzanTimeFromHTML:websitePage];
     ishaAzan = [self getAzanTimeFromHTML:websitePage];
     
-    // Reset before jumping to jamaah
-    timeLocation.location = 0;
+    
+     Reset before jumping to jamaah
+    //timeLocation.location = 0;
     
     fajrJamaa = [self getJamaaTimeFromHTML:websitePage];
     dhuhrJamaa = [self getJamaaTimeFromHTML:websitePage];
     asrJamaa = [self getJamaaTimeFromHTML:websitePage];
     maghribJamaa = [self getJamaaTimeFromHTML:websitePage];
     ishaJamaa = [self getJamaaTimeFromHTML:websitePage];
+    */
     
     if([fajrAzan length] != 0)
     {

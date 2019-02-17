@@ -134,7 +134,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.1.4 (2)";
+    NSString *correctVersion = @"1.2.1 (1)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -149,9 +149,9 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.1.4 (2)>" message:@"Fixed bugs that cause the app to crash" delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.2.1 (1)>" message:@"Fixed a bug that didn't let the app download the correct latest prayer times." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
-        [welcome show];
+        //[welcome show];
     }
     
     [self.logViewController addLog:[NSString stringWithFormat:@"Coming from: %@", existingVersion]];
@@ -186,13 +186,13 @@
     BOOL haveNewActivites = NO;
     
     [self fetchNewPrayerTimes:&haveNewPrayerContent];
-    [self.activitiesViewController performRefreshData:&haveNewActivites];
+    //[self.activitiesViewController performRefreshData:&haveNewActivites];
     
     if(haveNewPrayerContent)
         [self.viewController loadPage];
     
-    if(haveNewActivites)
-        [self.activitiesViewController refreshData:nil];
+    //if(haveNewActivites)
+        //[self.activitiesViewController refreshData:nil];
     
     if (haveNewPrayerContent || haveNewActivites)
     {
