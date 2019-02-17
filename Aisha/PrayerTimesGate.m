@@ -659,20 +659,8 @@
         bgFetchData = websitePage;
     
     NSLog(@"content = %@",websitePage);
-    
-    // Remove first and last characters which are double quotations
-    websitePage = [websitePage substringWithRange:NSMakeRange(1, [websitePage length]-2)];
-    
-    // Remove \r\n
-    websitePage = [websitePage stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@""];
-    
-    // Replace \" with "
-    websitePage = [websitePage stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
-    
-    NSLog(@"content without newline = %@",websitePage);
-    
+
     NSData *data = [websitePage dataUsingEncoding:NSUTF8StringEncoding];
-    
     
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
