@@ -623,7 +623,11 @@
                                                   encoding:NSASCIIStringEncoding
                                                      error:&error];
     
-    NSString *wiseUrlString = @"https://www.wise-web.org";///appindex.php";
+    NSString *wiseUrlString = @"https://prayertimes-functions.azurewebsites.net/api/PrayerTimesTranslator?code=88qupa6LqnWajbvtbNx8P9ssOo2SnFaInK39aP9gv0OQKIKQCH1h4g==&name=wise";///appindex.php";
+    NSURL *wiseWebsiteUrl = [NSURL URLWithString:wiseUrlString];
+    NSString *wiseWebsitePage = [NSString stringWithContentsOfURL:wiseWebsiteUrl
+                                                  encoding:NSASCIIStringEncoding
+                                                     error:&error];
     //NSString *wiseUrlString = @"http://www.google.com";
     //[self loadUrl:wiseUrlString];
     //NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
@@ -661,11 +665,14 @@
     NSLog(@"content = %@",websitePage);
 
     NSData *data = [websitePage dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *wiseData = [wiseWebsitePage dataUsingEncoding:NSUTF8StringEncoding];
     
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
+
+    NSDictionary *wiseParsedObject = [NSJSONSerialization JSONObjectWithData:wiseData options:kNilOptions error:&error];
+
     //timeLocation.location = 0;
-    adjustment = [parsedObject objectForKey:@"adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
+    adjustment = [wiseParsedObject objectForKey:@"Adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
     
     //timeLocation.location = 0;
     
